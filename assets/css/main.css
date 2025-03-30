@@ -1,15 +1,4 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -85,6 +74,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  
 }
 
 /* PHP Email Form Messages
@@ -472,6 +462,7 @@ section,
   text-align: center;
   padding-bottom: 60px;
   position: relative;
+  
 }
 
 .section-title h2 {
@@ -480,19 +471,21 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  text-align: left;
 }
 
 .section-title h2:before {
+  
   content: "";
   position: absolute;
   display: block;
   width: 160px;
   height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
   left: 0;
   right: 0;
   bottom: 1px;
   margin: auto;
+  
 }
 
 .section-title h2::after {
@@ -501,7 +494,6 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: var(--accent-color);
   left: 0;
   right: 0;
   bottom: 0;
@@ -510,6 +502,7 @@ section,
 
 .section-title p {
   margin-bottom: 0;
+  text-align: left;
 }
 
 /*--------------------------------------------------------------
@@ -636,45 +629,6 @@ section,
   background-color: #424242;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-/*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
-.stats i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  width: 54px;
-  height: 54px;
-  font-size: 24px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.stats .stats-item {
-  margin-top: 10px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  z-index: 0;
-}
-
-.stats .stats-item span {
-  font-size: 36px;
-  display: block;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.stats .stats-item p {
-  padding: 0;
-  margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
 }
 
 
@@ -1483,7 +1437,7 @@ section,
   text-align: left;
   height: 35px; /* ✅ Adjustable height */
   padding: 0 16px; /* Removed vertical padding */
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   font-size: 15px;

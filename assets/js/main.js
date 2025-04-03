@@ -227,3 +227,65 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
+
+  // Staggered Animation on Load
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 200); // 200ms delay between each card
+  });
+
+  // Scroll Animations with Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show"); // Remove for re-animation when scrolling back
+      }
+    });
+  }, { threshold: 0.2 }); // Trigger when 20% of card is visible
+
+  cards.forEach((card) => observer.observe(card));
+  
+});
+
+
+
+// Optional custom script if needed for additional controls or animations
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselElement = document.querySelector('#myCarousel');
+  const carousel = new bootstrap.Carousel(carouselElement, {
+      interval: 2000, // Set auto slide interval to 2 seconds
+      ride: 'carousel' // Enable auto slide
+  });
+});

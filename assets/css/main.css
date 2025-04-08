@@ -749,7 +749,7 @@ section,
   right: 12px;
   bottom: -100%;
   z-index: 3;
-  transition: all ease-in-out 0.5s;
+  transition: all 0.4s ease-in-out;
   background: color-mix(in srgb, var(--background-color), transparent 10%);
   padding: 15px;
 }
@@ -1428,17 +1428,15 @@ section,
 
 
 
-
 /* Skill as button style */
 .progress {
   width: 100%;
   background: #fff;
   border: none;
   text-align: left;
-  height: 35px; /* ✅ Adjustable height */
-  padding: 0 16px; /* Removed vertical padding */
+  height: 50px; /* Adjustable height */
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   font-size: 15px;
   color: #ffffff;
@@ -1447,12 +1445,13 @@ section,
   margin-bottom: 15px;
   cursor: default;
   display: flex;
-  align-items: center; /* Center content vertically */
+  align-items: center;
+  padding: 16px 16px;
 }
 
-/* Hover effect like your button */
+/* Hover effect */
 .progress:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
   background: #dbdbdb;
 }
@@ -1465,9 +1464,11 @@ section,
   position: relative;
   z-index: 2;
   width: 100%;
+  color: #ffffff;
+  font-weight: 600;
 }
 
-/* The filling bar */
+/* The bar container */
 .progress-bar-wrap {
   position: absolute;
   top: 0;
@@ -1476,8 +1477,10 @@ section,
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  z-index: 1;
 }
 
+/* The filling bar */
 .progress-bar {
   height: 100%;
   background: #0563bb;
@@ -1567,5 +1570,17 @@ section,
       color: #fff; }
     .single-portfolio .contents .cat {
       color: rgba(255, 255, 255, 0.5); }
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -254,38 +254,55 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card");
 
-  // Staggered Animation on Load
-  cards.forEach((card, index) => {
+  const typedText = document.getElementById("typed-text");
+
+  function type() {
+    if (charIndex < words[wordIndex].length) {
+      typedText.textContent += words[wordIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      setTimeout(erase, newWordDelay);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typedText.textContent = words[wordIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    } else {
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, typingDelay);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 1000);
+  });
+
+  // Optional: Hide loader when page fully loads
+  window.addEventListener("load", () => {
     setTimeout(() => {
-      card.classList.add("show");
-    }, index * 200); // 200ms delay between each card
+      document.getElementById("loader").style.display = "none";
+    }, 4000); // adjust this as needed
   });
 
-  // Scroll Animations with Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show"); // Remove for re-animation when scrolling back
-      }
-    });
-  }, { threshold: 0.2 }); // Trigger when 20% of card is visible
-
-  cards.forEach((card) => observer.observe(card));
-  
-});
 
 
 
-// Optional custom script if needed for additional controls or animations
-document.addEventListener('DOMContentLoaded', function () {
-  const carouselElement = document.querySelector('#myCarousel');
-  const carousel = new bootstrap.Carousel(carouselElement, {
-      interval: 2000, // Set auto slide interval to 2 seconds
-      ride: 'carousel' // Enable auto slide
+
+
+
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader-overlay");
+    const mainContent = document.getElementById("main-content");
+
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+      mainContent.style.display = "block";
+    }, 3000); // delay in ms
   });
-});
+
+    

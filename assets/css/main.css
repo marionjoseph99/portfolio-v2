@@ -52,7 +52,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -73,7 +73,8 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600; /* Example weight */
   
 }
 
@@ -587,6 +588,20 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
+.hover-reveal .hidden-info {
+  display: none;
+}
+.hover-reveal .default-info{
+    display: inline;
+}
+
+.hover-reveal:hover .hidden-info {
+  display: inline;
+}
+.hover-reveal:hover .default-info{
+    display: none;
+}
 .info-list li {
   list-style: none;
   margin-bottom: 8px;
@@ -796,130 +811,204 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services .col-lg-4,
+.services .col-md-6 {
+  display: flex;
+}
+
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 60px 30px;
-  text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
-}
-
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  min-height: 450px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #333;
 }
 
-.services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
+.services .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.18);
 }
 
-.services .service-item .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.services .service-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.services .service-item .icon svg path {
-  transition: 0.5s;
-  fill: color-mix(in srgb, var(--default-color), transparent 95%);
+.services .service-item:hover .service-image {
+  transform: scale(1.05);
+}
+
+.services .service-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.services .service-item:hover .service-image img {
+  opacity: 0.9;
+}
+
+.services .service-details {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.services .service-category {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease-in-out;
+}
+
+.services .service-item:hover .service-category {
+  color: var(--primary-color);
 }
 
 .services .service-item h3 {
   font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.services .service-item:hover h3 {
+  color: darken(#333, 15%);
 }
 
 .services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
-.services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+.message-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, letter-spacing 0.2s ease-in-out; /* Added letter-spacing transition */
+  margin-top: auto;
+  align-self: flex-start;
 }
 
-.services .service-item.item-cyan i {
+.message-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: scale(1.05); /* Slightly more pronounced scale */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* More noticeable shadow */
+  letter-spacing: 1px; /* Add some letter spacing on hover */
+}
+
+.services .service-details .stretched-link {
+  margin-top: 10px;
+}
+
+/* Color variations */
+.services .service-item.item-cyan .service-category,
+.services .service-item.item-cyan h3,
+.services .service-item.item-cyan p {
+  transition: color 0.3s ease-in-out;
+}
+
+.services .service-item.item-cyan:hover .service-category {
   color: #0dcaf0;
 }
 
-.services .service-item.item-cyan:hover .icon i {
-  color: #fff;
+.services .service-item.item-cyan:hover h3 {
+  color: darken(#333, 15%);
 }
 
-.services .service-item.item-cyan:hover .icon path {
-  fill: #0dcaf0;
+.services .service-item.item-orange .service-category,
+.services .service-item.item-orange h3,
+.services .service-item.item-orange p {
+  transition: color 0.3s ease-in-out;
 }
 
-.services .service-item.item-orange i {
+.services .service-item.item-orange:hover .service-category {
   color: #fd7e14;
 }
 
-.services .service-item.item-orange:hover .icon i {
-  color: #fff;
+.services .service-item.item-orange:hover h3 {
+  color: darken(#333, 15%);
 }
 
-.services .service-item.item-orange:hover .icon path {
-  fill: #fd7e14;
+.services .service-item.item-teal .service-category,
+.services .service-item.item-teal h3,
+.services .service-item.item-teal p {
+  transition: color 0.3s ease-in-out;
 }
 
-.services .service-item.item-teal i {
+.services .service-item.item-teal:hover .service-category {
   color: #20c997;
 }
 
-.services .service-item.item-teal:hover .icon i {
-  color: #fff;
+.services .service-item.item-teal:hover h3 {
+  color: darken(#333, 15%);
 }
 
-.services .service-item.item-teal:hover .icon path {
-  fill: #20c997;
+.services .service-item.item-red .service-category,
+.services .service-item.item-red h3,
+.services .service-item.item-red p {
+  transition: color 0.3s ease-in-out;
 }
 
-.services .service-item.item-red i {
+.services .service-item.item-red:hover .service-category {
   color: #df1529;
 }
 
-.services .service-item.item-red:hover .icon i {
-  color: #fff;
+.services .service-item.item-red:hover h3 {
+  color: darken(#333, 15%);
 }
 
-.services .service-item.item-red:hover .icon path {
-  fill: #df1529;
+.services .service-item.item-indigo .service-category,
+.services .service-item.item-indigo h3,
+.services .service-item.item-indigo p {
+  transition: color 0.3s ease-in-out;
 }
 
-.services .service-item.item-indigo i {
+.services .service-item.item-indigo:hover .service-category {
   color: #6610f2;
 }
 
-.services .service-item.item-indigo:hover .icon i {
-  color: #fff;
+.services .service-item.item-indigo:hover h3 {
+  color: darken(#333, 15%);
 }
 
-.services .service-item.item-indigo:hover .icon path {
-  fill: #6610f2;
+.services .service-item.item-pink .service-category,
+.services .service-item.item-pink h3,
+.services .service-item.item-pink p {
+  transition: color 0.3s ease-in-out;
 }
 
-.services .service-item.item-pink i {
+.services .service-item.item-pink:hover .service-category {
   color: #f3268c;
 }
 
-.services .service-item.item-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-pink:hover .icon path {
-  fill: #f3268c;
+.services .service-item.item-pink:hover h3 {
+  color: darken(#333, 15%);
 }
 
 /*--------------------------------------------------------------
@@ -1428,71 +1517,6 @@ section,
 
 
 
-/* Skill as button style */
-.progress {
-  width: 100%;
-  background: #fff;
-  border: none;
-  text-align: left;
-  height: 50px; /* Adjustable height */
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  font-size: 15px;
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 15px;
-  cursor: default;
-  display: flex;
-  align-items: center;
-  padding: 16px 16px;
-}
-
-/* Hover effect */
-.progress:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  background: #dbdbdb;
-}
-
-/* Text inside the progress */
-.progress .skill {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* The bar container */
-.progress-bar-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* The filling bar */
-.progress-bar {
-  height: 100%;
-  background: #0563bb;
-  width: 0%;
-  transition: width 3s ease;
-  border-radius: 8px;
-}
-
-
-
-
-
 
 
 
@@ -1663,4 +1687,277 @@ section,
     opacity: 0;
     visibility: hidden;
   }
+}
+
+
+#circle-transition {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000; /* Higher than loader */
+  pointer-events: none;
+  opacity: 1;
+  transition: width 0.8s ease-out, height 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.expand-circle {
+  width: 200vw;
+  height: 200vh;
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main container */
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* Column styling */
+.skill-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tooltip container */
+.skill-tooltip-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align tooltip container to the right */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  transition: opacity 0.3s ease;
+}
+
+/* Fade up animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tooltip styling */
+.skill-tooltip-text {
+  visibility: hidden;
+  width: auto; /* Adjust width to content */
+  padding: 8px 12px; /* Adjust padding */
+  background-color: #333;
+  color: #fff;
+  text-align: left; /* Align text to the left for better readability */
+  border-radius: 8px; /* Add rounded corners to the tooltip */
+  position: absolute;
+  top: -40px; /* Position above the progress bar */
+  right: 0; /* Position at the right end */
+  transform: translateX(0%); /* Center horizontally relative to the right edge */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 2; /* Ensure it's above the arrow */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.skill-tooltip-arrow {
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s;
+  position: absolute;
+  top: auto; /* Reset top */
+  bottom: -10px; /* Position the top of the arrow to meet the tooltip */
+  right: 10px; /* Adjust horizontal position */
+  transform: translateX(0); /* Reset horizontal transform */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #333; /* Create the downward arrow */
+  z-index: 1; /* Ensure it's below the text */
+}
+
+.skill-tooltip-container:hover .skill-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.skill-tooltip-container:hover .skill-tooltip-arrow {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Skill as button style */
+.skill-progress {
+  width: 100%;
+  background: #fff;
+  border: none;
+  text-align: left;
+  height: 20px; /* Fixed height for all screen sizes */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  padding: 16px; /* Reduced horizontal padding */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(20px);
+  transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.skill-progress:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow on hover */
+}
+
+/* Text inside the progress */
+.skill-progress .skill-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  color: #ffffff;
+  font-weight: 600;
+  overflow: hidden; /* To contain long text */
+  line-height: 1.2; /* Adjust as needed */
+}
+
+.skill-name span {
+  overflow-wrap: break-word; /* Break long words */
+}
+
+/* The bar container */
+.skill-progress-bar-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* The filling bar */
+.skill-progress-bar {
+  height: 100%;
+  background: #0563bb;
+  width: 0%; /* Start at 0% */
+  transition: width 2s ease-out; /* Animation for the progress bar */
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+  .skill-container {
+    justify-content: space-around; /* Adjust as needed: space-around, space-between, center */
+  }
+  .skill-column {
+    width: calc(50% - 25px); /* Adjust percentage and gap calculation as needed */
+    max-width: none; /* Remove max-width to allow percentage width */
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Adjust gap for smaller screens */
+  }
+
+  .skill-column {
+    width: 100%;
+    max-width: none;
+  }
+
+  .skill-progress {
+    width: 100%; /* Ensure full width */
+    min-width: 200px; /* Maintain a minimum width */
+    padding: 10px; /* Adjust padding for smaller screens */
+    height: 20px !important; /* Force height */
+    padding-top: 10px; /* Adjust vertical padding */
+    padding-bottom: 10px;
+    align-items: center; /* Center text vertically */
+  }
+
+  .skill-name span {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .skill-tooltip-container {
+    align-items: flex-start; /* Align tooltip container to the left on mobile */
+  }
+
+  .skill-tooltip-text {
+    left: 0;
+    right: auto;
+    top: -40px; /* Position above on mobile as well */
+    transform: translateX(0); /* Reset horizontal transform */
+  }
+
+  .skill-tooltip-arrow {
+    left: 10px;
+    right: auto;
+    top: auto; /* Reset top */
+    bottom: -10px; /* Position below the tooltip */
+    border-top: 10px solid #333; /* Ensure it points down */
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 576px) { /* Even smaller screens */
+  .skill-progress {
+    padding: 8px; /* Further reduce padding */
+    height: 20px !important; /* Force height */
+    padding-top: 8px; /* Adjust vertical padding */
+    padding-bottom: 8px;
+  }
+
+  .skill-name span {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .skill-container {
+    gap: 20px; /* Adjust gap for very small screens */
+  }
+}
+
+
+.p{
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

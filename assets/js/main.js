@@ -298,11 +298,52 @@
   window.addEventListener("load", () => {
     const loader = document.getElementById("loader-overlay");
     const mainContent = document.getElementById("main-content");
-
+    const circle = document.getElementById("circle-transition");
+  
     setTimeout(() => {
       loader.classList.add("fade-out");
-      mainContent.style.display = "block";
-    }, 3000); // delay in ms
+  
+      setTimeout(() => {
+        circle.classList.add("expand-circle"); // trigger circle expand
+        setTimeout(() => {
+          loader.style.display = "none"; // hide the loader completely
+          mainContent.style.display = "block";
+        }, 800); // wait for circle expand to finish
+      }, 500); // slight delay after fade out
+    }, 3000); // initial loader display duration
   });
 
-    
+
+
+
+
+
+  
+
+  
+  // Function to trigger animation when the progress bar comes into view
+const skillProgressBars = document.querySelectorAll('.skill-progress');
+
+const skillObserver = new IntersectionObserver((entries, skillObserver) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBar = entry.target.querySelector('.skill-progress-bar');
+      const progress = entry.target.getAttribute('data-progress');
+      
+      // Start the animation (smoothly increasing width)
+      progressBar.style.width = progress;
+      entry.target.style.opacity = 1; // Make the progress bar visible
+      entry.target.style.transform = 'translateY(0)'; // Make the progress bar slide into view
+
+      // Stop observing the element after it has been animated
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.5, // Trigger when 50% of the element is in the viewport
+});
+
+// Observe each progress bar element
+skillProgressBars.forEach(skillProgressBar => {
+  skillObserver.observe(skillProgressBar);
+});

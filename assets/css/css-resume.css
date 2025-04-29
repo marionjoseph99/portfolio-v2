@@ -1,188 +1,205 @@
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex; /* Enable flexbox for overall layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.download-container {
+  width: 100%; /* Make it full width */
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; /* Optional background color for separation */
+  border-radius: 5px; /* Optional rounded corners */
 }
 
 .resume-container {
-    max-width: 850px;
-    margin: 0px auto;
-    background: #fff;
-    padding: 20px;
-    padding-right: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 35% 65%;
-    gap: 25px;
+  max-width: 850px;
+  background: #fff;
+  padding: 20px;
+  padding-right: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 25px;
 }
 
 .header {
-    text-align: left;
-    padding-right: 15px;
+  text-align: left;
+  padding-right: 15px;
 }
 
 .header h1 {
-    font-size: 2em;
-    margin-bottom: 0px;
-    color: #0464bc;
-    margin-top: -5px;
+  font-size: 2em;
+  margin-bottom: 0px;
+  color: #0464bc;
+  margin-top: -5px;
 }
 
 .header p {
-    font-size: 0.8em;
-    color: #555;
+  font-size: 0.8em;
+  color: #555;
 }
 
 h2 {
-    font-size: 1.4em;
-    border-bottom: 2px solid #0464bc;
-    padding-bottom: 10px;
-    margin-top: 0;
-    color: #2c3e50;
+  font-size: 1.4em;
+  border-bottom: 2px solid #0464bc;
+  padding-bottom: 10px;
+  margin-top: 0;
+  color: #2c3e50;
 }
 
 h3 {
-    font-size: 1em;
-    margin-top: 0px;
-    color: #444;
-    font-weight: 600;
+  font-size: 1em;
+  margin-top: 0px;
+  color: #444;
+  font-weight: 600;
 }
 
 p {
-    margin-bottom: 10px;
-    margin-top: -15px;
-    margin-left: 15px;
-    color: #666;
-    font-size: 0.9em;
+  margin-bottom: 10px;
+  margin-top: -15px;
+  margin-left: 15px;
+  color: #666;
+  font-size: 0.9em;
 }
 
 ul, ol {
-    margin-bottom: 15px;
-    padding-left: 10px;
+  margin-bottom: 15px;
+  padding-left: 10px;
 }
 
 .section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 /* Contact Info Styles */
 .contact-info {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 25px;
-    text-align: left;
-    font-size: 0.8em;
-    color: #555;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  text-align: left;
+  font-size: 0.8em;
+  color: #555;
 }
 
 .contact-info li {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-info i {
-    font-size: 1.2em; /* Icon size */
-    color: #0464bc;  /* Icon color */
+  font-size: 1.2em; /* Icon size */
+  color: #0464bc;  /* Icon color */
 }
 
 
 
 
 .skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .skills-list li {
-    margin-bottom: 5px;
-  }
-  
-  .skills-list li span {
-    display: block;
-    font-size: .9em;
-    margin-bottom: 2px;
-    color: #333;
-    font-weight: 300;
-  }
-  
-  .progress-bar {
-    width: 100%;
-    background-color: #eee;
-    border-radius: 10px;
-    height: 10px;
-    overflow: hidden;
-  }
-  
-  .progress {
-    height: 100%;
-    width: 80%; /* static 80% */
-    background: linear-gradient(90deg, #0464bc, #0464bc);
-    border-radius: 10px;
-    transition: width 0.8s ease;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  margin-bottom: 5px;
+}
+
+.skills-list li span {
+  display: block;
+  font-size: .9em;
+  margin-bottom: 2px;
+  color: #333;
+  font-weight: 300;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 80%; /* static 80% */
+  background: linear-gradient(90deg, #0464bc, #0464bc);
+  border-radius: 10px;
+  transition: width 0.8s ease;
+}
+
 
 /* Profile Image Styles */
 .profile-image {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 10%;
-    object-fit: cover;
-    margin-bottom: 0px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10%;
+  object-fit: cover;
+  margin-bottom: 0px;
 }
 
 .profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%;
 }
 
 /* Left Section Styles */
 .left-section {
-    background-color: #6db0dd46;
-    padding: 25px;
-    border-radius: 30px;
-    position: relative;
+  background-color: #6db0dd46;
+  padding: 25px;
+  border-radius: 30px;
+  position: relative;
 }
 
 /* Download Button Styles */
 .download-button {
-    display: inline-block;
-    padding: 10px;
-    background-color: #0464bc;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 10px;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    width: 60%;
+  display: inline-block;
+  padding: 10px 20px; /* Adjusted padding for better button size */
+  background-color: #0464bc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px; /* Adjusted font size */
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px; /* Added some margin */
 }
 
 .download-button:hover {
-    background-color: #0464bc;
+  background-color: #034a8a; /* Darker shade on hover */
 }
 
 /* Media Query for Print */
 @media print {
-    body {
+  body {
       font-size: 10pt;
       line-height: 1.2;
-    }
-  
-    .resume-container {
+      display: block; /* Revert to block for printing */
+      align-items: start; /* Revert alignment for printing */
+  }
+
+  .download-container {
+      display: none; /* Hide the top download button on print */
+  }
+
+  .resume-container {
       width: 210mm;
       height: 297mm;
       margin: 0;
@@ -193,62 +210,69 @@ ul, ol {
       display: grid;
       grid-template-columns: 30% 70%;
       gap: 15mm;
-    }
-  
-    .left-section {
+  }
+
+  .left-section {
       padding: 8mm;
-    }
-  
-    h1 {
+  }
+
+  h1 {
       font-size: 1.8em;
-    }
-  
-    h2 {
+  }
+
+  h2 {
       font-size: 1.3em;
-    }
-  
-    h3 {
+  }
+
+  h3 {
       font-size: 1em;
-    }
-  
-    p {
+  }
+
+  p {
       font-size: 0.9em;
-    }
-  
-    .contact-info {
+  }
+
+  .contact-info {
       font-size: 0.7em;
-    }
-  
-    .skills-list li {
+  }
+
+  .skills-list li {
       font-size: 0.7em;
       padding: 4px 8px;
-    }
-  
-    .download-button {
-      display: none; /* This should hide the button during printing */
-    }
   }
+
+  .download-button {
+      display: none; /* This should hide the button during printing */
+  }
+}
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-    .resume-container {
-        grid-template-columns: 1fr;
-        padding: 25px;
-        margin: 15px;
-    }
+  body {
+      align-items: stretch; /* Make body elements full width on mobile */
+  }
 
-    .contact-info li {
-        display: block;
-        margin: 8px 0;
-    }
+  .download-container {
+      margin: 15px;
+  }
 
-    .header {
-        text-align: center;
-        padding-right: 0;
-    }
+  .resume-container {
+      grid-template-columns: 1fr;
+      padding: 25px;
+      margin: 15px;
+  }
 
-    .profile-image {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .contact-info li {
+      display: block;
+      margin: 8px 0;
+  }
+
+  .header {
+      text-align: center;
+      padding-right: 0;
+  }
+
+  .profile-image {
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
-

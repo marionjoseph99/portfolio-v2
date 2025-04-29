@@ -842,18 +842,31 @@ section,
 
 .services .service-image {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* Standard widescreen aspect ratio */
   overflow: hidden;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
-.services .service-item:hover .service-image {
+/* New rule for .project-image with a different aspect ratio for different height */
+.services .project-image {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Example: A more square-like aspect ratio for greater height */
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.services .service-item:hover .service-image,
+.services .service-item:hover .project-image { /* Apply hover to both */
   transform: scale(1.05);
 }
 
-.services .service-image img {
+.services .service-image img,
+.services .project-image img { /* Apply to both image containers */
   display: block;
   width: 100%;
   height: 100%;
@@ -861,7 +874,8 @@ section,
   transition: opacity 0.3s ease-in-out;
 }
 
-.services .service-item:hover .service-image img {
+.services .service-item:hover .service-image img,
+.services .service-item:hover .project-image img { /* Apply hover to both images */
   opacity: 0.9;
 }
 
@@ -902,6 +916,14 @@ section,
   margin-bottom: 15px;
 }
 
+.services .project-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 15px; /* Adjust margin as needed */
+}
+
 .message-button {
   background-color: var(--primary-color);
   color: white;
@@ -915,11 +937,11 @@ section,
   align-self: flex-start;
 }
 
-.message-button:hover {
-  background-color: darken(var(--primary-color), 10%);
-  transform: scale(1.05); /* Slightly more pronounced scale */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* More noticeable shadow */
-  letter-spacing: 1px; /* Add some letter spacing on hover */
+.services .message-button:hover {
+  background-color: var(--secondary-color); /* Replace with your desired hover color */
+  color: #fff; /* Optional: Change the text color on hover */
+  /* You can also add other styles like a subtle transition for a smoother effect */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .services .service-details .stretched-link {

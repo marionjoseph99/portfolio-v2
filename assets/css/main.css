@@ -371,14 +371,31 @@ h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
   z-index: 99999;
   background-color: var(--accent-color);
   width: 44px;
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
+
+  /* Add the animation properties */
+  animation: bounceUpDown 1.5s infinite alternate ease-in-out;
+}
+
+/* Define the keyframes for the animation */
+@keyframes bounceUpDown {
+  0% {
+    transform: translateX(-50%) translateY(0); /* Start at original position */
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px); /* Move up by 10px */
+  }
+  100% {
+    transform: translateX(-50%) translateY(0); /* Return to original position */
+  }
 }
 
 .scroll-top i {
@@ -1983,3 +2000,906 @@ section,
 .p{
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Profile css */
+
+
+/* Base styles for the body and overall layout */
+        
+
+        /* Styling for the text content column */
+        .text-content-column {
+            padding-left: 80px; /* Left padding to match the design */
+            padding-right: 40px; /* Right padding */
+        }
+
+        /* Title badge styling (now "Available for Freelance") */
+        .title-badge {
+            background-color: #e6ffe6; /* Light green background */
+            color: #28a745; /* Green text color */
+            padding: 8px 15px;
+            border-radius: 20px; /* Rounded corners */
+            display: inline-flex; /* Allows content to be inline */
+            align-items: center; /* Vertically align content */
+            font-size: 0.9rem;
+            font-weight: 600; /* Semi-bold text */
+            margin-bottom: 1.5rem; /* Space below the badge */
+        }
+        .title-badge .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #28a745; /* Green dot */
+            border-radius: 50%; /* Circular dot */
+            display: inline-block;
+            margin-right: 8px; /* Space between dot and text */
+        }
+
+
+        /* Heading styling */
+        .hero-heading {
+            font-size: 3.8rem; /* Large font size for impact */
+            line-height: 1.1; /* Tight line height */
+            color: #343a40; /* Dark text color */
+            font-weight: 700; /* Extra bold */
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Paragraph styling */
+        .hero-paragraph {
+            font-size: 1.15rem; /* Slightly larger paragraph text */
+            color: #6c757d; /* Muted grey text */
+            max-width: 550px; /* Limit width for readability */
+            margin-bottom: 2.5rem;
+        }
+
+        /* Button group styling */
+        .button-group-2 {
+            display: flex; /* Use flexbox for button alignment */
+            gap: 15px; /* Space between buttons */
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            margin-bottom: 30px; /* Space below button group for social icons */
+        }
+
+        /* Specific button styles using the blue color */
+        .btn-primary-custom {
+            background-color: #007bff; /* Blue color */
+            border-color: #007bff; /* Blue border */
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+            color: #ffffff;
+        }
+
+        .btn-outline-primary-custom {
+            border-color: #007bff; /* Blue border */
+            color: #007bff; /* Blue text */
+            background-color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-outline-primary-custom:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #ffffff; /* White text on hover */
+            border-color: #007bff;
+        }
+
+        /* Styles for the light green "Available for Freelance" buttons (kept for consistency, though not used in HTML now) */
+        .btn-green-custom {
+            background-color: #e6ffe6; /* Light green background */
+            border-color: #e6ffe6;
+            color: #28a745; /* Green text color */
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-green-custom:hover {
+            background-color: #d4f8d4; /* Slightly darker green on hover */
+            border-color: #d4f8d4;
+            color: #1e7e34; /* Darker green text on hover */
+        }
+
+        .btn-outline-green-custom {
+            border-color: #28a745; /* Green border */
+            color: #28a745; /* Green text */
+            background-color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-outline-green-custom:hover {
+            background-color: #28a745; /* Green background on hover */
+            color: #ffffff; /* White text on hover */
+            border-color: #28a745;
+        }
+
+        /* Social icons styling */
+        .social-icons-group {
+            display: flex;
+            gap: 20px; /* Space between icons */
+            margin-top: 20px; /* Space above the icons */
+            align-items: center;
+        }
+
+        .social-icon {
+            color: #6c757d; /* Gray color for icons */
+            font-size: 24px; /* Icon size */
+            transition: color 0.3s ease;
+            text-decoration: none; /* Remove underline from links */
+            display: flex; /* For centering SVG */
+            align-items: center;
+            justify-content: center;
+            width: 30px; /* Ensure consistent click area */
+            height: 30px; /* Ensure consistent click area */
+        }
+
+        .social-icon:hover {
+            color: #343a40; /* Darker gray on hover */
+        }
+
+        .social-icon svg {
+            fill: currentColor; /* Inherit color from parent */
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* Styling for the image column - now holds the profile card */
+        .image-column {
+            position: relative; /* Needed for absolute positioning of the card */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 600px; /* Ensure sufficient height for the card */
+            padding-right: 80px; /* Right padding to match the design */
+            padding-left: 20px; /* Added left padding for better balance */
+        }
+
+        /* Profile card container to hold the card and its offset background */
+        .profile-card-container {
+            position: relative; /* Allows pseudo-element to be positioned relative to this */
+            width: 350px; /* INCREASED WIDTH */
+            height: 350px; /* INCREASED HEIGHT */
+            /* Apply rotation to this container, so both card and offset rotate together */
+            transform: rotate(-5deg);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            display: flex; /* Helps center the card within it if needed */
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .profile-card-container:hover {
+            transform: rotate(0deg); /* Optional: straighten on hover */
+        }
+
+        /* Pseudo-element for the offset orange background */
+        .profile-card-container::before {
+            content: '';
+            position: absolute;
+            top: 20px; /* Adjusted vertical offset for larger size */
+            left: 20px; /* Adjusted horizontal offset for larger size */
+            width: 100%;
+            height: 100%;
+            background-color: #0563bb; /* Orange color */
+            border-radius: 15px; /* Match card border-radius */
+            z-index: -1; /* Place it behind the actual card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow to the offset */
+        }
+
+
+        /* Profile card specific styles (now without rotation) */
+        .profile-card {
+            width: 100%; /* Take full width of its container */
+            height: 100%; /* Take full height of its container */
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* No rotation here, as the parent container handles it */
+        }
+
+        .profile-card-img-container {
+            height: 70%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .profile-card-content {
+            padding: 20px;
+            text-align: left; /* Changed to left alignment */
+        }
+
+        .profile-card-content h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .profile-card-content p {
+            font-size: 1em;
+            color: #777;
+            margin-bottom: 0;
+        }
+
+
+        /* Responsive adjustments for medium and small screens */
+        @media (max-width: 991.98px) { /* Medium devices (tablets) */
+            .text-content-column {
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center; /* Center text on smaller screens */
+                margin-bottom: 50px; /* Space between text and image */
+            }
+
+            .hero-heading {
+                font-size: 2.8rem; /* Adjust heading size */
+            }
+
+            .hero-paragraph {
+                max-width: 100%; /* Allow paragraph to take full width */
+            }
+
+            .button-group {
+                justify-content: center; /* Center buttons */
+            }
+
+            .social-icons-group {
+                justify-content: center; /* Center social icons */
+            }
+
+            .image-column {
+                min-height: 400px; /* Adjust image column height */
+                padding-right: 20px; /* Adjust padding */
+                padding-left: 20px; /* Add left padding for consistency */
+            }
+
+            /* Adjust profile card size for tablets */
+            .profile-card-container {
+                width: 300px; /* Smaller width for tablets */
+                height: 300px; /* Smaller height for tablets */
+            }
+
+            .profile-card-container::before {
+                top: 15px; /* Adjust offset */
+                left: 15px; /* Adjust offset */
+            }
+        }
+
+        @media (max-width: 767.98px) { /* Small devices (phones) */
+            .hero-heading {
+                font-size: 2.2rem; /* Further adjust heading size */
+            }
+
+            .button-group {
+                flex-direction: column; /* Stack buttons vertically */
+                align-items: stretch; /* Stretch buttons to full width */
+            }
+
+            .btn-primary-custom,
+            .btn-outline-primary-custom {
+                width: 100%; /* Make buttons full width */
+            }
+
+            /* Adjust profile card size for phones */
+            .profile-card-container {
+                width: 250px; /* Even smaller width for phones */
+                height: 250px; /* Even smaller height for phones */
+            }
+
+            .profile-card-container::before {
+                top: 10px; /* Adjust offset */
+                left: 10px; /* Adjust offset */
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* chatbot css */
+
+        /* Floating Chatbot Button (New style provided by user) */
+        .ai-chatbot-btn { /* Renamed to avoid conflict with Bootstrap .btn and internal .btn-primary-custom */
+            position: fixed; /* Fixes the button relative to the viewport */
+            bottom: 30px; /* Distance from the bottom of the viewport */
+            right: 30px; /* Distance from the right of the viewport */
+            z-index: 1050; /* Ensures it's above other content and modals */
+
+            border: none;
+            width: 10em;
+            height: 3em;
+            border-radius: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            background: #0563bb; /* Dark background */
+            cursor: pointer;
+            transition: all 450ms ease-in-out;
+            /* Ensure text is hidden on mobile: handled in media query */
+        }
+
+        .ai-chatbot-btn .sparkle { /* Target sparkle within this specific button */
+            fill: #eeeeee; /* Grey fill for sparkle */
+            transition: all 800ms ease;
+            height: 24px; /* Ensure consistent sparkle size */
+            width: 24px;
+        }
+
+        .ai-chatbot-btn .text { /* Target text within this specific button */
+            font-weight: 600;
+            color: #eeeeee; /* Grey text color */
+            font-size: medium;
+        }
+
+        .ai-chatbot-btn:hover {
+            background: linear-gradient(0deg,#A47CF3,#683FEA); /* Gradient background on hover */
+            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+                        inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+                        0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+                        0px 0px 180px 0px #9917FF; /* Enhanced shadow on hover */
+            transform: translateY(-2px);
+        }
+
+        .ai-chatbot-btn:hover .text {
+            color: white; /* White text on hover */
+        }
+
+        .ai-chatbot-btn:hover .sparkle {
+            fill: white; /* White sparkle on hover */
+            transform: scale(1.2); /* Scale sparkle on hover */
+        }
+
+
+        /* Responsive adjustments for medium and small screens */
+        @media (max-width: 991.98px) { /* Medium devices (tables) */
+            .text-content-column {
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center; /* Center text on smaller screens */
+                margin-bottom: 50px; /* Space between text and image */
+            }
+
+            .hero-heading {
+                font-size: 2.8rem; /* Adjust heading size */
+            }
+
+            .hero-paragraph {
+                max-width: 100%; /* Allow paragraph to take full width */
+            }
+
+            .button-group {
+                justify-content: center; /* Center buttons */
+            }
+
+            .social-icons-group {
+                justify-content: center; /* Center social icons */
+            }
+
+            .image-column {
+                min-height: 400px; /* Adjust image column height */
+                padding-right: 20px; /* Adjust padding */
+                padding-left: 20px; /* Add left padding for consistency */
+            }
+
+            /* Adjust profile card size for tablets */
+            .profile-card-container {
+                width: 300px; /* Smaller width for tablets */
+                height: 300px; /* Smaller height for tablets */
+            }
+
+            .profile-card-container::before {
+                top: 15px; /* Adjust offset */
+                left: 15px; /* Adjust offset */
+            }
+
+            /* Tablet specific adjustments for chatbot button */
+            .ai-chatbot-btn { /* Apply tablet styles to the new .ai-chatbot-btn class */
+                bottom: 20px;
+                right: 20px;
+                width: 12em; /* Adjust width for tablets */
+                height: 4em; /* Adjust height for tablets */
+            }
+            .ai-chatbot-btn .sparkle { /* Adjust sparkle size for tablets */
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 767.98px) { /* Small devices (phones) */
+            .hero-heading {
+                font-size: 2.2rem; /* Further adjust heading size */
+            }
+
+            .button-group {
+                flex-direction: column; /* Stack buttons vertically */
+                align-items: stretch; /* Stretch buttons to full width */
+            }
+
+            .btn-primary-custom,
+            .btn-outline-primary-custom {
+                width: 100%; /* Make buttons full width */
+            }
+
+            /* Adjust profile card size for phones */
+            .profile-card-container {
+                width: 250px; /* Even smaller width for phones */
+                height: 250px; /* Even smaller height for phones */
+            }
+
+            .profile-card-container::before {
+                top: 10px; /* Adjust offset */
+                left: 10px; /* Adjust offset */
+            }
+
+            /* Mobile specific adjustments for chatbot button (new .ai-chatbot-btn class) */
+            .ai-chatbot-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 50px; /* Fixed width for just the icon */
+                height: 50px; /* Fixed height for just the icon */
+                padding: 0; /* Remove padding for a square/circular button */
+                border-radius: 50%; /* Make it perfectly circular */
+                font-size: 1.5rem; /* Larger icon size if needed */
+            }
+            .ai-chatbot-btn .text { /* Hide the text on mobile */
+                display: none;
+            }
+            .ai-chatbot-btn .sparkle { /* Adjust sparkle margin for mobile */
+                margin-right: 0;
+            }
+        }
+
+        /* --- Chatbot Modal Styles --- */
+        #chatModal .modal-dialog {
+            /* Default desktop size (Bootstrap's max-width for modal-lg is 800px typically, modal-md is 500px, modal-sm is 300px) */
+            /* We explicitly set it here to ensure consistency */
+            max-width: 500px;
+            margin: 1.75rem auto; /* Default Bootstrap centering margin */
+            transition: all 0.3s ease-in-out; /* Smooth transition for resizing */
+        }
+
+        #chatModal .modal-content {
+            border-radius: 12px; /* More rounded corners for the modal */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+            overflow: hidden; /* Ensures inner elements respect border-radius */
+        }
+
+        #chatModal .modal-header {
+            background-color: #f0f2f5; /* Light grey background for header */
+            border-bottom: 1px solid #e0e0e0;
+            padding: 18px 25px; /* More padding */
+            border-top-left-radius: 12px; /* Match modal content border-radius */
+            border-top-right-radius: 12px;
+        }
+
+        #chatModal .modal-title {
+            color: #343a40;
+            font-weight: 600; /* Semi-bold title */
+            font-size: 1rem; /* Slightly larger title */
+        }
+
+        #chatModal .btn-close {
+            font-size: 0.9rem; /* Smaller close button icon */
+        }
+
+        #chatModal .modal-body {
+            padding: 25px; /* More padding in the body */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #chatDisplay {
+            height: 350px; /* Slightly taller chat display */
+            overflow-y: auto;
+            border: none; /* Remove border, rely on padding and bubble styles */
+            border-radius: 8px;
+            padding: 10px; /* Adjust padding inside chat display */
+            background-color: #fff; /* White background for chat area */
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+            scroll-behavior: smooth;
+        }
+
+        .chat-message {
+            margin-bottom: 12px; /* Slightly more space between messages */
+            display: flex; /* Use flexbox for alignment within messages */
+        }
+
+        .chat-message.user {
+            justify-content: flex-end; /* Align user messages to the right */
+        }
+
+        .chat-message.gemini {
+            justify-content: flex-start; /* Align Gemini messages to the left */
+        }
+
+        .chat-message.user .message-bubble {
+            background-color: #007bff; /* Blue for user messages */
+            color: white;
+            border-radius: 18px 18px 5px 18px; /* More modern bubble shape */
+            padding: 10px 15px;
+            display: inline-block;
+            max-width: 80%; /* Limit bubble width */
+            word-wrap: break-word; /* Ensure long words wrap */
+            font-size: 0.95rem; /* Slightly smaller text for bubbles */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for bubbles */
+        }
+
+        .chat-message.gemini .message-bubble {
+            background-color: #e9ecef; /* Light gray for Gemini messages */
+            color: #343a40;
+            border-radius: 18px 18px 18px 5px; /* More modern bubble shape */
+            padding: 10px 15px;
+            display: inline-block;
+            max-width: 80%; /* Limit bubble width */
+            word-wrap: break-word; /* Ensure long words wrap */
+            font-size: 0.95rem; /* Slightly smaller text for bubbles */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for bubbles */
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 10px;
+            padding-top: 10px; /* Space above input */
+            border-top: 1px solid #f0f0f0; /* Light border above input area */
+            margin-top: 10px;
+        }
+
+        .chat-input-group input {
+            flex-grow: 1;
+            border-radius: 20px; /* More rounded input field */
+            padding: 10px 15px; /* More padding */
+            border: 1px solid #ced4da;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .chat-input-group input:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        /* Reverted Send button styles within the chat input group */
+        .chat-input-group .btn-primary-custom {
+            border-radius: 20px; /* Keep consistent rounding with input */
+            padding: 10px 20px; /* Adjust padding */
+            font-size: 0.95rem; /* Slightly smaller font for button */
+            min-width: 80px; /* Ensure button doesn't shrink too much */
+            display: flex; /* Use flex to center content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            background-color: #007bff; /* Original blue */
+            border-color: #007bff; /* Original blue */
+            color: #ffffff; /* Original white text */
+            box-shadow: none; /* Remove custom box-shadow */
+            transform: none; /* Remove custom transform */
+        }
+
+        .chat-input-group .btn-primary-custom:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+            color: #ffffff;
+            box-shadow: none; /* Ensure no custom box-shadow on hover */
+            transform: none; /* Ensure no custom transform on hover */
+        }
+
+
+        #chatLoadingSpinner {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: none; /* Hidden by default */
+        }
+        #chatSendText {
+            display: inline-block; /* Shown by default */
+        }
+
+        /* Responsive adjustments for chat modal for small screens (mobile) */
+        @media (max-width: 575.98px) { /* Bootstrap's XS breakpoint for full width modals */
+            #chatModal .modal-dialog {
+                margin: 0; /* Remove margins */
+                width: 100%; /* Full width */
+                height: 100vh; /* Full viewport height */
+                max-width: 100%; /* Override max-width for smaller screens */
+                /* Positioning for full screen mobile */
+                top: 0;
+                left: 0;
+                transform: none; /* Reset any centering transforms */
+                position: fixed; /* Keep it fixed on the screen */
+                display: flex; /* Use flexbox for inner content arrangement */
+                align-items: stretch; /* Stretch content vertically */
+            }
+
+            #chatModal .modal-content {
+                height: 100%; /* Take full height of its dialog parent */
+                border-radius: 0; /* No rounded corners for full screen */
+                box-shadow: none; /* No shadow for full screen */
+                display: flex; /* Use flexbox to stack header, body, input */
+                flex-direction: column;
+            }
+
+            #chatModal .modal-header {
+                border-radius: 0; /* No rounded corners */
+                flex-shrink: 0; /* Prevent header from shrinking */
+            }
+
+            #chatModal .modal-body {
+                flex-grow: 1; /* Allow chat body to take available space */
+                overflow-y: hidden; /* Prevent extra scrollbars in the body */
+                padding-bottom: 0; /* Adjust padding for full height */
+            }
+
+            #chatDisplay {
+                height: 100%; /* Make chat display take full height available */
+                border-radius: 0; /* No rounded corners for chat display itself */
+                flex-grow: 1; /* Allow chat display to grow */
+                overflow-y: auto; /* Enable scrolling for chat messages */
+            }
+            /* Ensure input is at the bottom */
+            .chat-input-group {
+                margin-top: auto; /* Push input to bottom */
+                padding-bottom: 20px; /* Add some padding at the very bottom */
+                flex-shrink: 0; /* Prevent input from shrinking */
+            }
+        }
+
+        /* New: Typing indicator styles */
+        .typing-indicator .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #6c757d; /* Grey dots */
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: bounce 0.8s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .typing-indicator .dot:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            40% {
+                transform: translateY(-5px);
+                opacity: 1;
+            }
+        }
+
+        /* New: Message entry animation */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message.animated {
+            animation: fadeInSlideUp 0.3s ease-out;
+        }
+
+
+        
+
+
+
+/* New: Container for buttons within the chat bubble */
+.chat-buttons-container {
+    margin-top: 10px; /* Space above buttons if there's text */
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    gap: 8px; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons to the start of the bubble */
+    width: 100%; /* Take full width of the bubble */
+}
+
+/* Ensure existing .chat-button styles are still present and apply to this new structure */
+.chat-message.gemini .message-bubble .chat-button {
+    /* Keep your existing .chat-button styles here */
+    display: inline-block;
+    margin: 0; /* Remove margin from individual buttons, let gap handle it */
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.chat-message.gemini .message-bubble .chat-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Important: Adjust your .chat-message.gemini .message-bubble display */
+/* If you had 'display: flex' and 'flex-wrap: wrap' on .message-bubble previously,
+   you might want to remove it or adjust it so it only applies to the text flow,
+   and let .chat-buttons-container manage button layout.
+   For simplicity, I've kept the original bubble flex settings but ensured buttons
+   are in their own sub-container.
+*/
+.chat-message.gemini .message-bubble {
+    /* Keep your existing bubble styles here */
+    /* Example: */
+    background-color: #e9ecef;
+    color: #343a40;
+    border-radius: 18px 18px 18px 5px;
+    padding: 10px 15px;
+    /* Consider changing display from 'inline-block' to 'block' or 'flex'
+       if you want the text and buttons to stack neatly within the bubble.
+       Since we're appending the buttons container, a block-like display for bubbleSpan might be better.
+       Let's assume it's already behaving like a block or will expand.
+    */
+    display: block; /* Ensures content inside can stack */
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+
+
+
+
+/* Styling for the modal header with both titles and close button */
+.modal-header {
+    display: flex; /* Enable Flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items in the middle */
+    gap: 10px; /* Add some space between the items */
+    padding: 15px; /* Adjust padding as needed */
+    border-bottom: 1px solid #dee2e6; /* Keep or adjust your border */
+}
+
+.modal-header .modal-title {
+    margin-bottom: 3px; /* Remove default h5 margin */
+    font-size: 1.25rem; /* Adjust font size as needed */
+    flex-shrink: 0; /* Prevent title from shrinking */
+    /* Remove 'margin-right: auto;' if it was present here */
+}
+
+.modal-header .powered-by-gemini {
+    font-size: 0.8em; /* Adjust size as needed */
+    color: #6c757d; /* A subtle grey for "Powered by" */
+    margin-bottom: 0; /* Remove default h5 margin */
+    white-space: nowrap; /* Keep "Powered by Gemini" on one line */
+    flex-shrink: 0; /* Prevent from shrinking too much */
+    /* Remove 'margin-left: auto;' and 'margin-right: auto;' if they were present here */
+}
+
+.modal-header .gemini-text {
+    /* Gradient for the 'Gemini' part of the text */
+    background: linear-gradient(to right, #4285F4, #663399, #FF6600, #EA4335); /* Google Gemini colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+    font-weight: bold; /* Make 'Gemini' stand out */
+    font-size: 1.3em; /* Slightly larger than "Powered by" */
+    white-space: nowrap; /* Keep "Gemini" on one line */
+}
+
+.modal-header .btn-close {
+    margin-left: auto; /* THIS IS THE KEY: Pushes the button to the far right */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* social meda icons */
+
+.social-icons-group .social-icon {
+            font-size: 24px; /* Adjust size as needed to match the image */
+            color: #6c757d; /* Default Bootstrap gray color for icons */
+        }
+        .social-icons-group .social-icon:hover {
+            color: #0d6efd; /* Example hover color */
+        }
+        .available-tag {
+            display: inline-block;
+            background-color: #28a745; /* Green background */
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50rem; /* Pill shape */
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .available-tag::before {
+            content: '•';
+            margin-right: 0.5rem;
+            color: #000000; /* Dot color */
+        }

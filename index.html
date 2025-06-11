@@ -8,6 +8,7 @@
   <title>Marjo Paguia</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- Favicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -97,31 +98,56 @@
     <section id="hero" class="hero section light-background">
 
 
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Marjo Paguia</h2>
-            <p>I'm a <span class="typed" data-typed-items="Aspiring Architect, 3D Visualizer, Visual Artist,">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="https://www.facebook.com/profile.php?id=100093286052861" target="_blank" rel="noopener noreferrer">
+      <div class="container hero-section">
+        <div class="row w-100">
+            <div class="col-lg-6 col-md-12 text-content-column">
+                <div class="title-badge">
+                    <span class="dot"></span> Available for Freelance
+                </div>
+                <h1 class="hero-heading">
+                    Crafting Innovative <br> & Visually <br> Compelling Designs.
+                </h1>
+                <p class="hero-paragraph">
+                    A passionate architecture student and visual artist from General Trias, Cavite, Philippines, dedicated to crafting innovative and visually compelling designs. With a keen eye for detail and a love for creative expression, I strive to blend artistry with functionality to bring unique visions to life.
+                </p>
+                
+
+                <div class="container mt-5">
+        <div class="social-icons-group d-flex"> 
+            <a href="https://www.facebook.com/people/MStudio/100093286052861/" target="_blank" class="social-icon" aria-label="Facebook">
                 <i class="bi bi-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/13_1_18_jo/?next=%2F" target="_blank" rel="noopener noreferrer">
+            </a>
+            <a href="https://www.instagram.com/13_1_18_jo/?next=%2F" target="_blank" class="social-icon" aria-label="Instagram">
                 <i class="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/marjo-paguia-6b5839144/" target="_blank" rel="noopener noreferrer">
+            </a>
+            <a href="https://www.linkedin.com/in/marjo-paguia-6b5839144/" target="_blank" class="social-icon" aria-label="LinkedIn">
                 <i class="bi bi-linkedin"></i>
-              </a>
-              <a href="https://www.behance.net/marjopaguia" target="_blank" rel="noopener noreferrer">
+            </a>
+            <a href="https://www.behance.net/marjopaguia" class="social-icon" target="_blank" aria-label="Behance">
                 <i class="bi bi-behance"></i>
-              </a>
-              <a href="https://www.tiktok.com/@m.studio24?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+            </a>
+            <a href="https://www.tiktok.com/@m.studio24?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon" aria-label="TikTok">
                 <i class="bi bi-tiktok"></i>
-              </a>
-            </div>
-          </div>
+            </a>
         </div>
-      </div>
+    </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 image-column">
+                <div class="profile-card-container">
+                    <div class="profile-card">
+                        <div class="profile-card-img-container">
+                            <img src="assets/img/marjo.jpg" alt="Marjo's Profile Picture" class="profile-card-img">
+                        </div>
+                        <div class="profile-card-content">
+                            <h2>MARJO</h2>
+                            <p>Aspiring Architect & 3D Visualizer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </section><!-- /Hero Section -->
 
@@ -215,6 +241,8 @@
   </div>
 </div>
 
+
+
             
             
           </div>
@@ -222,6 +250,53 @@
 
       </div>
 
+
+
+
+
+
+
+
+<!-- Floating Chatbot Button -->
+    <button class="ai-chatbot-btn" data-bs-toggle="modal" data-bs-target="#chatModal" aria-label="Open Chatbot">
+        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+        </svg>
+        <span class="text">AI ChatBot</span>
+    </button>
+
+    
+    <!-- Chatbot Modal -->
+    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatModalLabel">Chat with Ai</h5>
+                    <h5 class="powered-by-gemini">Powered by <span class="gemini-text"> Google Gemini ✨</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="chatDisplay">
+                        <div class="chat-message gemini animated">
+                            <span class="message-bubble">Hello! I'm Marjo's AI assistant. Ask me anything about Marjo or his work!</span>
+                        </div>
+                    </div>
+                    <div class="chat-input-group">
+                        <input type="text" class="form-control" id="chatInput" placeholder="Ask a question..." aria-label="Chat input">
+                        <button class="btn btn-primary-custom" id="chatSendBtn">
+                            <span id="chatLoadingSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span id="chatSendText">Send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
       

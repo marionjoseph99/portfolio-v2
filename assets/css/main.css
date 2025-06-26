@@ -605,6 +605,16 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+/* new */
+
+.info-list button i.fas {
+  margin-right: 10px; /* Adds space between the arrow and the text */
+  color: #007bff; /* Example color for the arrow */
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+
+
 
 .hover-reveal .hidden-info {
   display: none;
@@ -628,7 +638,6 @@ section,
 
 .info-list li button {
   width: 100%;
-  background: #fff;
   border: none;
   text-align: left;
   padding: 1px 10px;
@@ -1858,7 +1867,7 @@ section,
 /* Skill as button style */
 .skill-progress {
   width: 100%;
-  background: #fff;
+  background: #dbdbdb;
   border: none;
   text-align: left;
   height: 20px; /* Fixed height for all screen sizes */
@@ -2903,3 +2912,14 @@ section,
             margin-right: 0.5rem;
             color: #000000; /* Dot color */
         }
+
+        
+
+
+
+
+
+
+
+
+        

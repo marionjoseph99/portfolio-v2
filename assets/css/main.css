@@ -638,11 +638,11 @@ section,
 
 .info-list li button {
   width: 100%;
+  background-color: white;
   border: none;
   text-align: left;
   padding: 1px 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   font-size: 15px;
   color: #333;
@@ -657,20 +657,10 @@ section,
 }
 
 .info-list li button:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transform: translateY(-2px);
-  background: #dbdbdb;
 }
 
 
-.dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #424242;
-  border-radius: 50%;
-  margin-right: 10px;
-}
 
 
 
@@ -1879,8 +1869,8 @@ section,
   overflow: hidden;
   margin-bottom: 10px;
   cursor: default;
-  display: flex;
-  align-items: center;
+  display: flex; /* Make skill-progress a flex container */
+  align-items: center; /* Vertically center content */
   padding: 16px; /* Reduced horizontal padding */
   opacity: 0; /* Initially invisible */
   transform: translateY(20px);
@@ -1891,16 +1881,30 @@ section,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Add a subtle shadow on hover */
 }
 
+/* New class to wrap icon and skill name for alignment */
+.skill-content {
+  display: flex; /* Make skill-content a flex container */
+  align-items: center; /* Vertically center icon and text */
+  gap: 10px; /* Space between icon and text */
+  flex-grow: 1; /* Allows the content to take available space */
+  position: relative; /* For z-index to work with skill-name */
+  z-index: 2; /* Ensure content is above the progress bar */
+  color: #ffffff; /* Text color */
+  font-weight: 600;
+}
+
+/* Style for the skill icon */
+.skill-icon {
+  font-size: 1.2em; /* Adjust icon size */
+  color: #ffffff; /* Icon color */
+}
+
 /* Text inside the progress */
 .skill-progress .skill-name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* Removed display: flex and width: 100% as it's now handled by skill-content */
+  display: block; /* Change back to block or inline-block */
+  width: auto; /* Adjust width automatically */
   position: relative;
-  z-index: 2;
-  width: 100%;
-  color: #ffffff;
-  font-weight: 600;
   overflow: hidden; /* To contain long text */
   line-height: 1.2; /* Adjust as needed */
 }
@@ -1988,7 +1992,8 @@ section,
   }
 }
 
-@media (max-width: 576px) { /* Even smaller screens */
+@media (max-width: 576px) {
+  /* Even smaller screens */
   .skill-progress {
     padding: 8px; /* Further reduce padding */
     height: 20px !important; /* Force height */
@@ -2005,9 +2010,9 @@ section,
   }
 }
 
-
-.p{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.p {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 

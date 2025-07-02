@@ -605,3 +605,26 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.focus();
     });
 });
+
+
+
+
+// scroll top behaviour
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollTopButton = document.querySelector('#scroll-top');
+  const scrollThreshold = 100; // Adjust this value as needed (in pixels)
+
+  function toggleScrollTopButton() {
+    if (window.scrollY > scrollThreshold) {
+      scrollTopButton.classList.add('active');
+    } else {
+      scrollTopButton.classList.remove('active');
+    }
+  }
+
+  // Initial check in case the page loads with a scroll position
+  toggleScrollTopButton();
+
+  // Listen for scroll events
+  window.addEventListener('scroll', toggleScrollTopButton);
+});

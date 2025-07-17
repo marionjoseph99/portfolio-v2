@@ -47,7 +47,7 @@ body {
         @media (max-width: 768px) { /* Tailwind's 'md' breakpoint is 768px */
             #marjo-chatbot-widget.open {
                 width: 100%;
-                height: 100vh; /* Full height on mobile */
+                height: 90vh; /* Full height on mobile */
                 border-radius: 0; /* No border-radius on mobile fullscreen */
                 top: 0; /* Align to top */
                 left: 0; /* Align to left */

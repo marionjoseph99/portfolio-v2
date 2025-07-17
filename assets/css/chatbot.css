@@ -246,11 +246,13 @@ body {
 
 
         #marjo-popup-message.visible { /* New class for showing */
+            display: none;
             opacity: 1;
             visibility: visible;
         }
 
         #marjo-popup-message .marjo-close-popup {
+            display: none;
             position: absolute;
             top: 5px;
             right: 8px;
@@ -265,6 +267,7 @@ body {
         }
 
         #marjo-popup-message .marjo-close-popup:hover {
+            display: none;
             color: #6B7280; /* Gray-600 */
         }
 

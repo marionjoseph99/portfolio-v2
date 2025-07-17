@@ -4,6 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Marjo Paguia</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
   <title>Marjo Paguia</title>
   <meta content="" name="description">
@@ -12,7 +37,8 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <!-- Favicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="assets/img/marjoicon.png" rel="icon">
+  <link href="assets/img/favico.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Fonts -->
@@ -43,12 +69,67 @@
 
 
 
+<!-- Pop-up Message -->
+ <div>
+    <div id="marjo-popup-message">
+        <button class="marjo-close-popup" id="marjo-close-popup-button"><i class="fas fa-times"></i></button>
+        <p>Ask me anything about Marjo!</p>
+        <p class="text-xs text-gray-600 mt-1">Click the sparkle to chat.</p>
+    </div>
 
+    <!-- Chatbot Widget - This div will morph -->
+    <div id="marjo-chatbot-widget" class="closed">
+        <div id="marjo-chatbot-header">
+            <div class="flex items-center">
+                <span class="marjo-sparkle-emoji" style="margin-right: 0.5rem;">✨</span>
+                <div>
+                    <h1 class="text-xl font-bold leading-tight">AI Chatbot</h1>
+                    <span class="text-xs font-light opacity-80 marjo-powered-by-gemini">Powered by Google Gemini ✨</span>
+                </div>
+            </div>
+            <button id="marjo-close-chat" class="text-white text-xl hover:text-gray-200 transition duration-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="marjo-chatbox-content">
+            <!-- Chat Messages Area -->
+            <div id="marjo-messages-area">
+                <div class="text-center text-gray-500 mt-10" id="marjo-initial-message">
+                    Type a message to start chatting!
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div id="marjo-chat-input-area">
+                <input
+                    type="text"
+                    id="marjo-chat-input"
+                    class="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                    placeholder="Ask a question..."
+                    disabled
+                />
+                <button
+                    id="marjo-send-button"
+                    class="px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg"
+                    disabled
+                >
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
 
 
 
 <body class="index-page">
 
+
+
+
+
+
+  
   <header id="header" class="header d-flex flex-column justify-content-center">
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -252,42 +333,7 @@
 
 
 
-<!-- Floating Chatbot Button -->
-    <button class="ai-chatbot-btn" data-bs-toggle="modal" data-bs-target="#chatModal" aria-label="Open Chatbot">
-        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
-        </svg>
-        <span class="text">AI ChatBot</span>
-    </button>
 
-    
-    <!-- Chatbot Modal -->
-    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="chatModalLabel">Chat with Ai</h5>
-                    <h5 class="powered-by-gemini">Powered by <span class="gemini-text"> Google Gemini ✨</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="chatDisplay">
-                        <div class="chat-message gemini animated">
-                            <span class="message-bubble">Hello! I'm Marjo's AI assistant. Ask me anything about Marjo or his work!</span>
-                        </div>
-                    </div>
-                    <div class="chat-input-group">
-                        <input type="text" class="form-control" id="chatInput" placeholder="Ask a question..." aria-label="Chat input">
-                        <button class="btn btn-primary-custom" id="chatSendBtn">
-                            <span id="chatLoadingSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            <span id="chatSendText">Send</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 
 
 
@@ -1109,27 +1155,27 @@
           </div><div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item item-indigo position-relative">
               <div class="service-image">
-                <img src="assets/img/services/soon.jpg" alt="Soon-to-be-added Services" class="img-fluid">
+                <img src="assets/img/walkthrough.jpg" alt="Architectural Walkthrough" class="img-fluid">
               </div>
               <div class="service-details">
-                <h6 class="service-category">More to Come</h6>
-                <h3>Soon-to-be-added Services</h3>
-                <p>Exciting new services are on the way! Stay tuned for more creative and professional offerings to elevate your projects.</p>
-                <button class="btn btn-primary message-button">Soon</button>
-                <a href="#" class="stretched-link"></a>
+                <h6 class="service-category">WALKTHROUGH</h6>
+                <h3>Architectural Walkthrough</h3>
+                <p>Immersive and detailed virtual experiences that bring architectural designs to life, enabling clear visualization of spatial relationships, material finishes, and the overall aesthetic before construction begins.</p>
+                <button class="btn btn-primary message-button">See more</button>
+                <a href="se" class="stretched-link"></a>
               </div>
             </div>
           </div><div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item item-pink position-relative">
               <div class="service-image">
-                <img src="assets/img/services/soon.jpg" alt="Soon-to-be-added Services" class="img-fluid">
+                <img src="assets/img/webdesign.jpg" alt="Personal Portfolio Website" class="img-fluid">
               </div>
               <div class="service-details">
-                <h6 class="service-category">More to Come</h6>
-                <h3>Soon-to-be-added Services</h3>
-                <p>Exciting new services are on the way! Stay tuned for more creative and professional offerings to elevate your projects.</p>
-                <button class="btn btn-primary message-button">Soon</button>
-                <a href="#" class="stretched-link"></a>
+                <h6 class="service-category">WEB DESIGN & DEVELOPMENT</h6>
+                <h3>Personal Portfolio Website</h3>
+                <p>Showcase your work with a custom-coded website made for architecture students and design professionals. Clean, mobile-friendly, and built from scratch. Perfect for applications, client pitches, or simply putting your best work online.</p>
+                <button class="btn btn-primary message-button">See more</button>
+                <a href="service-web.html" class="stretched-link"></a>
               </div>
             </div>
           </div></div>
@@ -1239,9 +1285,22 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/chatbot.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+  
 </body>
 
 </html>

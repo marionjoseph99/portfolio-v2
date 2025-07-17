@@ -199,6 +199,7 @@ h6 {
 .navmenu {
   padding: 0;
   z-index: 9997;
+  text-decoration: none;
 }
 
 .navmenu ul {
@@ -206,10 +207,12 @@ h6 {
   padding: 0 0 20px 0;
   margin: 0;
   width: 140px;
+  text-decoration: none;
 }
 
 .navmenu a,
 .navmenu a:focus {
+  text-decoration: none;
   color: var(--nav-color);
   font-family: var(--nav-font);
   display: flex;
@@ -428,31 +431,34 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  color: var(--default-color);
-  background-color: var(--background-color);
   padding: 20px 0;
   position: relative;
+  
 }
 
 .page-title h1 {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
+  
 }
 
+
 .page-title .breadcrumbs ol {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   list-style: none;
   padding: 0 0 10px 0;
   margin: 0;
   font-size: 14px;
   font-weight: 400;
+  
 }
 
 .page-title .breadcrumbs ol li+li {
   padding-left: 10px;
+  
+  
 }
 
 .page-title .breadcrumbs ol li+li::before {
@@ -460,6 +466,7 @@ h6 {
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
+  
 }
 
 /*--------------------------------------------------------------
@@ -1390,6 +1397,7 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .service-box {
+  border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
@@ -1407,6 +1415,7 @@ section,
 }
 
 .service-details .services-list a {
+  border-radius: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   background-color: color-mix(in srgb, var(--default-color), transparent 96%);
   display: flex;
@@ -1414,6 +1423,7 @@ section,
   padding: 12px 15px;
   margin-top: 15px;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .service-details .services-list a:first-child {
@@ -2416,5 +2426,3 @@ section,
 
 
 
-
-        
